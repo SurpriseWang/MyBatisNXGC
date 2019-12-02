@@ -1,0 +1,16 @@
+使用MyBatis逆向工程导读文件
+使用前请先修改src/main/resources中generatorConfig.xml中的配置
+修改数据连接
+ <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+    connectionURL="jdbc:mysql://127.0.0.1:3306/对应数据库"
+    userId="root"
+    password="root">
+ </jdbcConnection>
+ 修改对应表
+ <table tableName="user" delimitIdentifiers="true" domainObjectName="User"
+ enableCountByExample="false" enableUpdateByExample="false"
+ enableDeleteByExample="false" enableSelectByExample="false"
+ selectByExampleQueryId="false">
+    <property name="useActualColumnNames" value="true"/>
+    <generatedKey column="id" sqlStatement="JDBC"/>
+ </table>
